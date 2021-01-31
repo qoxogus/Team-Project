@@ -1,4 +1,4 @@
-# Team-Project
+# Webster-Embeddeds-Team-Project
 ### 협업방법
 1. develop branch에서 새로운 브랜치를 생성해서 작업.
 2. commit을 완료하면 develop branch에 PR 날리기.
