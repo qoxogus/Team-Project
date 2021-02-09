@@ -1,22 +1,19 @@
-a {
+a{
     text-decoration: none;
     color: black;
-}
-
-a:hover {
+  }
+  a:hover{
     color: blue;
-}
-
-.login-container {
+  }
+  .login-container {
     margin: 0 auto;
     position: absolute;
     width: 30%;
     height: 100%;
     margin-left: 15%;
     margin-right: 35%;
-}
-
-.login {
+  }
+  .login {
     margin-top: 25%;
     position: absolute;
     width: 100%;
@@ -26,58 +23,52 @@ a:hover {
     opacity: 0.8;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 2px 2px 2px lightslategray;
-}
-
-.section {
+  }
+  .section {
     margin-top: 30%;
     color: #555;
-}
-
-.id-section {
+  }
+  .id-section {
     position: relative;
     width: 100%;
     height: 12vmin;
     margin-top: 120px;
-}
-
-.input-container {
-    position: relative;
-    margin-bottom: 25px;
+  }
+  .input-container{
+    position:relative;
+    margin-bottom:25px;
     height: auto;
-}
-
-.input-container label {
-    position: absolute;
-    top: 0px;
-    left: 130px;
-    font-size: 20px;
-    color: #555;
+  }
+  .input-container label{
+    position:absolute;
+    top:0px;
+    left:130px;
+    font-size:20px;
+    color: #555;  
+    pointer-event:none;
     transition: all 0.5s ease-in-out;
-}
-
-.input-container input {
-    border: 0;
-    border-bottom: 1px solid #555;
-    background: transparent;
+  }
+  .input-container input{ 
+    border:0;
+    border-bottom:1px solid #555;  
+    background:transparent;
     width: 50%;
-    padding: 8px 0 5px 0;
-    font-size: 1em;
+    padding:8px 0 5px 0;
+    font-size:1em;
     color: #555;
-}
-
-.input-container input:focus {
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #555;
-}
-
-.input-container input:focus~label,
-.input-container input:valid~label {
-    top: -12px;
-    font-size: 1em;
-}
-
-.login-btn {
+  }
+  .input-container input:focus{ 
+   border:none; 
+   outline:none;
+   border-bottom:1px solid #555;  
+  }
+  
+  .input-container input:focus ~ label,
+  .input-container input:valid ~ label{
+    top:-12px;
+    font-size:1em;
+  }
+  .login-btn {
     position: relative;
     width: 200px;
     height: 6vmin;
@@ -96,11 +87,12 @@ a:hover {
     outline: none;
     margin-top: 60px;
     border: 1px solid #555;
-}
-
-.login-btn:hover {
+  }
+    
+  .login-btn:hover {
     background-color: #555;
     box-shadow: 0px 15px 20px rgba(78, 78, 78, 0.4);
     color: #fff;
     transform: translateY(-7px);
-}
+  }
+  
