@@ -1,0 +1,137 @@
+.button1 {
+    display: fixed;
+    position: relative;
+    width: 200px;
+    height: 6vmin;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin-top: 60px;
+    border: 1px solid #555;
+    left: 850px;
+    top: 830px;
+}
+
+.button1:hover {
+    background-color: #555;
+    box-shadow: 0px 15px 20px rgba(78, 78, 78, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+a:link { 
+    color: red; 
+    text-decoration: none;
+}
+a:visited { 
+    color: black; 
+    text-decoration: none;
+} 
+a:hover { 
+    color: black; 
+    text-decoration: underline;
+}
+
+.project{
+    width: 100%;
+    height: 2880px;
+    margin: 0 auto;
+}
+
+.container{
+    text-align: center;
+    margin-top: 1200px;
+}
+
+#card-pick{
+    transform: scale(1.1);
+}
+.card-box{
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 20px;
+    width: 280px;
+    max-width: 280px;
+    height: 360px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.26);
+    transition: 0.5;
+    
+}
+
+.card-box:hover{
+    transform: scale(0.95);
+    
+}
+.img-gradient{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(206, 113, 113, 0.096)
+    , rgb(241, 148, 148));
+    z-index: 2;
+}
+
+.text-wrap{
+    position: absolute;
+    bottom: 0;
+    padding: 24px;
+    z-index: 2;
+}
+
+.text-wrap h1{
+    color: #FFF;
+    font-size: 24px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.text-wrap p{
+    color: #FFF;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.h1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 50px;
+    position: relative;
+    top: 950px;
+    text-align: center;
+}
+
+.arrow1{
+    background: none;
+    position: relative;
+    position: relative; bottom: 175px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.arrow2{
+    background: none;
+    position: relative;
+    position: relative; bottom: 175px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
