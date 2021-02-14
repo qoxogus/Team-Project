@@ -1,3 +1,11 @@
+body {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 .button1 {
     position: relative;
     width: 200px;
@@ -19,7 +27,8 @@
     font-family: 'Indie Flower', cursive;
     z-index: 100;
 }
-.btn-container{
+
+.btn-container {
     position: absolute;
     width: 100%;
     top: 90%;
@@ -33,41 +42,45 @@
     transform: translateY(-7px);
 }
 
-a:link { 
-    color: red; 
+a:link {
+    color: red;
     text-decoration: none;
 }
-a:visited { 
-    color: black; 
+
+a:visited {
+    color: black;
     text-decoration: none;
-} 
-a:hover { 
-    color: black; 
+}
+
+a:hover {
+    color: black;
     text-decoration: underline;
 }
 
-.section1{
+.section1 {
     position: relative;
     width: 100%;
     height: 100vh;
     margin: 0 auto;
 }
-.project{
+
+.project {
     position: relative;
     margin: 0 auto;
 }
 
-.container{
+.container {
     position: relative;
-    text-align: center; 
+    text-align: center;
     top: 100%;
     height: 100vh;
 }
 
-#card-pick{
-    transform: scale(1.1);
+.card-box:hover {
+    transform: scale(1.05);
 }
-.card-box{
+
+.card-box {
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -75,35 +88,30 @@ a:hover {
     margin: 20px;
     width: 280px;
     max-width: 280px;
-    height: 360px;
+    height: 320px;
     overflow: hidden;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.26);
     transition: 0.5;
 }
 
-.card-box:hover{
-    transform: scale(0.95);
-    
-}
-.img-gradient{
+.img-gradient {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(206, 113, 113, 0.096)
-    , rgb(241, 148, 148));
+    background: linear-gradient(rgba(206, 113, 113, 0.096), rgb(241, 148, 148));
     z-index: 2;
 }
 
-.text-wrap{
+.text-wrap {
     position: absolute;
     bottom: 0;
     padding: 24px;
     z-index: 2;
 }
 
-.text-wrap h1{
+.text-wrap h1 {
     color: #FFF;
     font-size: 24px;
     margin-bottom: 8px;
@@ -111,40 +119,22 @@ a:hover {
     text-align: left;
 }
 
-.text-wrap p{
+.text-wrap p {
     color: #FFF;
     font-size: 18px;
     line-height: 1.5;
     text-align: left;
 }
 
-.h1{
+.h1 {
     font-family: 'Bebas Neue', cursive;
     font-size: 50px;
     position: relative;
     text-align: center;
-    margin-bottom: 150px;
+    margin-bottom: 30px;
 }
+
 .move-container {
     position: relative;
     top: 10%;
-}
-.arrow1{
-    background: none;
-    position: relative;
-    position: relative; bottom: 175px;
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-    outline: none;
-}
-
-.arrow2{
-    background: none;
-    position: relative;
-    position: relative; bottom: 175px;
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-    outline: none;
 }
