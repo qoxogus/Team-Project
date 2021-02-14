@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="../public/stylesheets/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <style>
         body {
             background-image: url('../public/images/Webster-ImbeddedsLogo\(Full\ Screen\).jpg');
@@ -20,40 +24,59 @@
     </style>
     <title>웹쟁이임베들</title>
 </head>
+
 <body>
-    <button class="button1">Go to See</button>
-    <div class="project">
-        <h1 class="h1">Our Project</h1>
-        <div class="container">
-            <button class="arrow1"><img src="../public/images/next(reverse).png" style="width: 60px; height: 60px;"></button>
-            <div class="card-box">
-                <div class="img-gradient"></div>
-                <!-- <img src="../imgs/sample-1.jpg" alt="Sample img 1"> -->
-                <div class="text-wrap">
-                    <h1>프로젝트제목</h1>
-                    <p>프로젝트 설명 글</p>
-                </div>
-                <div class="play-btn"></div>
-            </div>
-            <div class="card-box" id="card-pick">
-                <div class="img-gradient"></div>
-                <!-- <img src="../imgs/sample-2.jpg" alt="Sample img 2"> -->
-                <div class="text-wrap">
-                    <h1>프로젝트제목</h1>
-                    <p>프로젝트 설명 글</p>
-                </div>
-                <div class="play-btn"></div>
-            </div>
-            <div class="card-box">
-                <div class="img-gradient"></div>
-                <!-- <img src="../imgs/sample-3.jpg" alt="Sample img 3"> -->
-                <div class="text-wrap">
-                    <h1>프로젝트제목</h1>
-                    <p>프로젝트 설명 글</p>
-                </div>
-            </div>
-            <button class="arrow2"><img src="../public/images/next.png" style="width: 50px; height: 50px;"></button>
+    <div class="section1">
+        <div class="btn-container" id="moveBtn">
+            <a href="#target1" class="scroll"><button class="button1" id="downBtn">Go to See</button></a>
         </div>
     </div>
+    <div class="project">
+        <div class="container" id="target1">
+            <div class="move-container">
+                <h1 class="h1">Our Project</h1>
+                <button class="arrow1"><img src="../public/images/next(reverse).png"
+                        style="width: 60px; height: 60px;"></button>
+                <div class="card-box">
+                    <div class="img-gradient"></div>
+                    <!-- <img src="../imgs/sample-1.jpg" alt="Sample img 1"> -->
+                    <div class="text-wrap">
+                        <h1>프로젝트제목</h1>
+                        <p>프로젝트 설명 글</p>
+                    </div>
+                    <div class="play-btn"></div>
+                </div>
+                <div class="card-box" id="card-pick">
+                    <div class="img-gradient"></div>
+                    <!-- <img src="../imgs/sample-2.jpg" alt="Sample img 2"> -->
+                    <div class="text-wrap">
+                        <h1>프로젝트제목</h1>
+                        <p>프로젝트 설명 글</p>
+                    </div>
+                    <div class="play-btn"></div>
+                </div>
+                <div class="card-box">
+                    <div class="img-gradient"></div>
+                    <!-- <img src="../imgs/sample-3.jpg" alt="Sample img 3"> -->
+                    <div class="text-wrap">
+                        <h1>프로젝트제목</h1>
+                        <p>프로젝트 설명 글</p>
+                    </div>
+                </div>
+                <button class="arrow2"><img src="../public/images/next.png" style="width: 50px; height: 50px;"></button>
+            </div>
+        </div>
+    </div>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 500);
+            });
+        });
+    </script>
 </body>
+
 </html>
