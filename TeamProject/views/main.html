@@ -16,10 +16,11 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <style>
         body {
-            background-image: url('../public/images/Webster-ImbeddedsLogo\(Full\ Screen\).jpg');
+            background-image: url('../public/images/Webster-EmbeddedsLogoMainPage2.jpg');
             background-repeat: no-repeat;
             background-position: top;
             display: block;
+            background-color: #f9d0c2;
         }
     </style>
     <title>웹쟁이임베들</title>
@@ -27,11 +28,28 @@
 
 <body>
     <div class="section1">
-        <div class="btn-container" id="moveBtn">
+        <div class="header">
+            <div class="logo-container">
+                <img src="../public/images/logo.jpg" alt="" class="logo">
+            </div>
+            <div class="content1">
+                팀 소개
+            </div>
+            <div class="content2">
+                콘텐츠2
+            </div>
+            <div class="content3">
+                콘텐츠3
+            </div>
+            <div class="login-container">
+                <a href="../views/login.html">Log In</a>
+            </div>
+        </div>
+        <div class="btn-container">
             <a href="#target1" class="scroll"><button class="button1" id="downBtn">Go to See</button></a>
         </div>
     </div>
-    <div class="project">
+    <div class="setction2">
         <div class="container" id="target1">
             <div class="move-container">
                 <h1 class="h1">
@@ -72,6 +90,9 @@
                         <p>프로젝트 설명 글</p>
                     </div>
                 </div>
+            </div>
+            <div class="btn-container" style="margin-top: 2.5vmin;">
+                <button type="button" onclick="$('html').animate({scrollTop : 0})" class="button1">Go UP</button>
             </div>
         </div>
     </div>
