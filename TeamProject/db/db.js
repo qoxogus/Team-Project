@@ -20,6 +20,15 @@ module.exports = {
     Insert:function(userName, userEmail, userPassword) {
         connection.query("INSERT INTO user (name, email, password) VALUES ('"+userName+"', '"+userEmail+"', '"+userPassword+"')")
         console.log("[INSERT 완료]")
+    },
+    Select:function(userEmail, callback) {
+    connection.query("SELECT * FROM user WHERE email = ?",[userEmail], function(err, results) {
+        if(err) {
+            console.log(err)
+        } 
+        console.log("[SELCET 완료]")
+        callback(null, results);
+    })  
     }
 }
 
