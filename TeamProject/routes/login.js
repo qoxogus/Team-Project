@@ -61,7 +61,7 @@ router.post('/signin', function(req, res, next) {
           if(result) { //true
             console.log("Correct password!")
             console.log("Login success")
-            res.redirect('/main', /*{ name : name }*/)
+            res.redirect('/', /*{ name : name }*/)
           } else {
             console.log("Uncorrect password!")
             res.redirect('/login')

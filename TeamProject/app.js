@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/')));
 
-app.use('/main', mainRouter);
+app.use('/', mainRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 
