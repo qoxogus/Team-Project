@@ -9,8 +9,6 @@ const saltRounds = 10
 
 var dbcon = require('../db/db');
 var secretObj = require('../config/jwt');
-const { request } = require('express');
-const db = require('../db/db');
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
