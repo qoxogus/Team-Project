@@ -51,25 +51,17 @@ router.post('/signin', function(req, res, next) {
     var name = results[0].name
     var dbemail = results[0].email
     var hash_password = results[0].password
-    if(userEmail === dbemail) {
-      console.log("Correct email!")
-      bcrypt.compare(userPassword, hash_password, function(err, result) {
-        if(err) { console.log(err); } 
-        else {
-          if(result) { //true
-            console.log("Correct password!")
-            console.log("Login success")
-            res.redirect('/', /*{ name : name }*/)
-          } else {
-            console.log("Uncorrect password!")
-            res.redirect('/login')
-          }
-        }
-      })
-    } else {
-      console.log("Don't find this user!")
-      res.redirect('/login')
-    }
+    bcrypt.compare(userPassword, hash_password, function(err, result) {
+      if(userEmail === dbemail || userPassword === hash_password) {
+        //success login
+        console.log("Login success")
+        res.redirect('/', /*{ name : name }*/)
+      } else {
+        //failed login
+        console.log("Don't find this user!")
+        res.redirect('/login')
+      }
+    })
   })
 });
 
