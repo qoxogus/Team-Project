@@ -3,6 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser')
 var app = express()
 var jwt = require('jsonwebtoken')
+const url = require('url');
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10
@@ -45,23 +46,35 @@ router.post('/signin', function(req, res, next) {
     if (err) {
       console.log("Database error!");
     }
+    if(results[0] == null) {
+      console.log("Don't find this user!  [Login failed]")
+      res.redirect('/login')
+      return
+    }
     else {
       console.log(results);
     }
-    var name = results[0].name
+    var names = results[0].name
     var dbemail = results[0].email
     var hash_password = results[0].password
-    bcrypt.compare(userPassword, hash_password, function(err, result) {
-      if(userEmail === dbemail || userPassword === hash_password) {
-        //success login
-        console.log("Login success")
-        res.redirect('/', /*{ name : name }*/)
-      } else {
-        //failed login
-        console.log("Don't find this user!")
-        res.redirect('/login')
-      }
-    })
+    if(userEmail === dbemail) {
+      console.log("Correct email!")
+      bcrypt.compare(userPassword, hash_password, function(err, result) {
+        if(err) { console.log(err); } 
+        else {
+          if(result) { //true
+            console.log("Correct password!  [Login success]")
+            res.redirect('/')
+          } else {
+            console.log("Uncorrect password!  [Login failed]")
+            res.redirect('/login')
+          }
+        }
+      })
+    } else {
+      console.log("Don't find this user!  [Login failed]")
+      res.redirect('/login')
+    }
   })
 });
 
