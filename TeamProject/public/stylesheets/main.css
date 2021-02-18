@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300&display=swap');
+
 body {
     -ms-overflow-style: none;
 }
-
+a{
+    color: black !important
+}
+a:hover{
+    text-decoration: none !important
+}
 body::-webkit-scrollbar {
     display: none;
 }
@@ -11,13 +18,20 @@ body::-webkit-scrollbar {
     text-align: center;
 }
 .logo-container {
-    width: 10vw;
-    height: 12vh;
+    width: 9vw;
+    height: 6vh;
     float: left;
+    box-shadow:5px 5px black;
+    border: 1px solid black;
+    background-color: white;
+    
 }
 .logo{
-    width: 100%;
-    height: 100%;
+    height: 6vh;
+    font-family: 'Gaegu', cursive;
+    font-size: 1.3vw;
+    font-size: 2.3vh;
+    line-height: 6vh;
 }
 .content1{
     padding-top: 30px;
@@ -42,6 +56,12 @@ body::-webkit-scrollbar {
     width: 11vw;
     height: 100%;
     left: 22%;
+}
+.login-container{
+    float: right;
+    width: 11vw;
+    height: 100%;
+    padding-top: 30px;
 }
 .button1 {
     position: relative;
