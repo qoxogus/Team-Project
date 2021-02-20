@@ -117,4 +117,4 @@ dist
 
 # make me
 db/db.json
-config/jwt.js
+config/secretkey.js
