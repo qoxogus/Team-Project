@@ -36,7 +36,7 @@ router.post('/register', function(req, res, next) {
   res.redirect('/login')
 });
 
-router.post('/signin', async function(req, res, next) {
+router.post('/signin', function(req, res, next) {
   dbcon.SQLconn();
   var userEmail = req.body.email;       //form에서 받은 데이터
   var userPassword = req.body.password;  //form에서 받은 데이터
@@ -58,7 +58,7 @@ router.post('/signin', async function(req, res, next) {
     var ismanager = results[0].ismanager
     if(userEmail === dbemail) {
       console.log("Correct email!")
-      bcrypt.compare(userPassword, hash_password, function(err, result) {
+      bcrypt.compare(userPassword, hash_password, async function(err, result) {
         if(err) { console.log(err); } 
         else {
           if(result) { //true

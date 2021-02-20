@@ -16,7 +16,6 @@ module.exports = {
             token: jwt.sign(payload, secretKey, options),
             refreshToken: randToken.uid(256)
         };
-        console.log(result.token);
         return result;
     },
     verify: async (token) => {
