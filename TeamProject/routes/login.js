@@ -2,14 +2,12 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser')
 var app = express()
-var jwt = require('jsonwebtoken')
-const url = require('url');
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10
 
 var dbcon = require('../db/db');
-var secretObj = require('../config/jwt');
+const jwt = require('../modules/jwt');
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -38,7 +36,7 @@ router.post('/register', function(req, res, next) {
   res.redirect('/login')
 });
 
-router.post('/signin', function(req, res, next) {
+router.post('/signin', async function(req, res, next) {
   dbcon.SQLconn();
   var userEmail = req.body.email;       //form에서 받은 데이터
   var userPassword = req.body.password;  //form에서 받은 데이터
@@ -57,6 +55,7 @@ router.post('/signin', function(req, res, next) {
     var names = results[0].name
     var dbemail = results[0].email
     var hash_password = results[0].password
+    var ismanager = results[0].ismanager
     if(userEmail === dbemail) {
       console.log("Correct email!")
       bcrypt.compare(userPassword, hash_password, function(err, result) {
@@ -64,7 +63,11 @@ router.post('/signin', function(req, res, next) {
         else {
           if(result) { //true
             console.log("Correct password!  [Login success]")
-            res.redirect('/')
+            //토큰 발급
+            const jwtToken = await jwt.sign(dbemail, ismanager);
+            console.log(jwtToken.token);
+            return res.status(200).send(jwtToken.token)
+            // res.redirect('/')
           } else {
             console.log("Uncorrect password!  [Login failed]")
             res.redirect('/login')

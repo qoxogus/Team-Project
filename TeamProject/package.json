@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "async-await": "^0.1.40",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
@@ -20,6 +21,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "rand-token": "^1.0.1"
   }
 }
