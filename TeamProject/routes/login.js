@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 
 
 
-router.post('/register', function(req, res, next) {
+router.post('/register', function(req, res, next) { //회원가입
   dbcon.SQLconn();
   var userName = req.body.name;          //form에서 받은 데이터
   var userEmail = req.body.email;       //form에서 받은 데이터
@@ -36,8 +36,8 @@ router.post('/register', function(req, res, next) {
   res.redirect('/login')
 });
 
-router.post('/signin', function(req, res, next) {
-  dbcon.SQLconn();
+router.post('/signin', function(req, res, next) { //login
+  dbcon.SQLconn();                      //db 연결
   var userEmail = req.body.email;       //form에서 받은 데이터
   var userPassword = req.body.password;  //form에서 받은 데이터
   dbcon.Select(userEmail, function(err, results) {
@@ -66,7 +66,15 @@ router.post('/signin', function(req, res, next) {
             //토큰 발급
             const jwtToken = await jwt.sign(dbemail, ismanager);
             console.log(jwtToken.token);
-            return res.status(200).send(jwtToken.token)
+            console.log("refresh token : "+jwtToken.refreshToken);
+            res.writeHead(200, {
+              'Set-Cookie':[
+                  `jwt_cookie=${jwtToken.token}; HttpOnly; Max-Age=${60*30}`
+              ]                                                
+          });
+          res.end(`${jwtToken.token}`)
+            // return 
+            // res.status(200).send(jwtToken.token)
             // res.redirect('/')
           } else {
             console.log("Uncorrect password!  [Login failed]")
