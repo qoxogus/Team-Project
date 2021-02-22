@@ -69,7 +69,7 @@ router.post('/signin', function(req, res, next) { //login
             console.log("refresh token : "+jwtToken.refreshToken);
             res.writeHead(200, {
               'Set-Cookie':[
-                  `jwt_cookie=${jwtToken.token}; HttpOnly; Max-Age=${60*30}`
+                  `jwt_cookie=${jwtToken.token}; HttpOnly; Max-Age=${60*30}; Path=/`
               ]                                                
           });
           res.end(`${jwtToken.token}`)
