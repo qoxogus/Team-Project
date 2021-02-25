@@ -6,8 +6,9 @@ const TOKEN_EXPIRED = -3;
 const TOKEN_INVALID = -2;
 
 module.exports = {
-    sign: async (dbemail, ismanager) => {
+    sign: async (names, dbemail, ismanager) => {
         const payload = {
+            name: names,
             email: dbemail,
             ismanager: ismanager
         };
