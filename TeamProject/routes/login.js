@@ -65,7 +65,7 @@ router.post('/signin', function(req, res, next) { //login
             console.log("Correct password!  [Login success]")
             //토큰 발급
             const jwtToken = await jwt.sign(names, dbemail, ismanager);
-            console.log(jwtToken.token);
+            console.log("token : "+jwtToken.token);
             console.log("refresh token : "+jwtToken.refreshToken);
             res.writeHead(200, {
               'Set-Cookie':[
